@@ -4,11 +4,30 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  // const [count, setCount] = useState(0)
+let[counter,setCounter]=useState(15)
+ // let counter=5;
+const addValue=() =>{
+  console.log("clicked",Math.random())
+ //  counter=counter+1;
+ if(counter<20){
+ counter=counter+1;
+ setCounter(counter)
+ }
+ else
+ {
+ let text=document.getElementById('advalue')
+ text.innerHTML="Exceeded"
+ }
+}
+const removeValue=()=>{
+  if(counter>0)
+  {
+  setCounter(counter-1)
+}}
   return (
     <>
-      <div>
+      {/* <div>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
@@ -27,7 +46,12 @@ function App() {
       </div>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
-      </p>
+      </p> */}
+      <h1>Chai aur react</h1>
+      <h2>Counter value:{counter}</h2>
+      <button onClick={addValue} id="advalue">Add value</button>
+      <br></br>
+      <button onClick={removeValue}>Remove value</button>
     </>
   )
 }
